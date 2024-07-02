@@ -72,7 +72,7 @@ const adConfig = {
         // Only text-link or pure-text ads
         type: 'pure-text',
         content: 'Ad space available. Contact us for more information.',
-        display: true
+        display: false
     },
     ad4: {
         type: 'pure-text',
