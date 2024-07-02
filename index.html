@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canatai</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="py-3">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <h1 class="mb-0">Canatai</h1>
+                    <p class="slogan mb-0">簡潔全面的加拿大生活指南</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="clocks-container">
+                        <div class="clock">
+                            <div class="time" id="taiwanTime"></div>
+                            <div class="date" id="taiwanDate"></div>
+                            <div class="location">Taiwan</div>
+                        </div>
+                        <div class="clock">
+                            <div class="time" id="vancouverTime"></div>
+                            <div class="date" id="vancouverDate"></div>
+                            <div class="location">Vancouver</div>
+                        </div>
+                        <div class="clock">
+                            <div class="time" id="albertaTime"></div>
+                            <div class="date" id="albertaDate"></div>
+                            <div class="location">Alberta</div>
+                        </div>
+                        <div class="clock">
+                            <div class="time" id="torontoTime"></div>
+                            <div class="date" id="torontoDate"></div>
+                            <div class="location">Toronto | Québec</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <main class="col-md-9 py-3">
+                    <nav>
+                        <ul class="nav nav-tabs" id="categoryTabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#news">
+                                    <i class="fas fa-newspaper"></i> <span>新聞天氣</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#jobs">
+                                    <i class="fas fa-briefcase"></i> <span>求職徵才</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#shopping">
+                                    <i class="fas fa-shopping-cart"></i> <span>飲食購物</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#government">
+                                    <i class="fas fa-landmark"></i> <span>政府移民</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#transportation">
+                                    <i class="fas fa-bus"></i> <span>通訊交通</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#finance">
+                                    <i class="fas fa-money-bill-wave"></i> <span>財務金融</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#community">
+                                    <i class="fas fa-users"></i> <span>社群論壇</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#hobby">
+                                    <i class="fas fa-paint-brush"></i> <span>興趣愛好</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#toronto">
+                                    <i class="fas fa-city"></i> <span>多倫多</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="tab-content mt-3">
+                        <div class="tab-pane fade show" id="news">
+                            <div class="row content-grid">
+                                <h4>新聞網站</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.cbc.ca/news" target="_blank">CBC News</a></h5>
+                                            <p>加拿大廣播公司，提供全國性新聞</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.citynews.ca" target="_blank">CityNews</a></h5>
+                                            <p>提供加拿大主要城市的即時新聞報導</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.theglobeandmail.com/" target="_blank">The Globe and
+                                                    Mail</a></h5>
+                                            <p>環球郵報</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://nationalpost.com/" target="_blank">National Post</a>
+                                            </h5>
+                                            <p>國家郵報</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.singtao.ca/toronto/?variant=zh-hk"
+                                                    target="_blank">Sing Tao 星島</a></h5>
+                                            <p>星島日報（中文）</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>天氣資訊</h4>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.theweathernetwork.com/ca" target="_blank">The
+                                                    Weather Network</a></h5>
+                                            <p>提供最新的天氣預報和天氣相關資訊</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://weather.gc.ca/canada_e.html" target="_blank">Canadian
+                                                    Weather</a></h5>
+                                            <p>加拿大政府氣象局</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade show" id="jobs">
+                            <div class="row content-grid">
+                                <div class="col-md-6">
+                                    <h4>求職網站</h4>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></h5>
+                                            <p>專業社交網絡平台，提供職業機會和人脈建立。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.indeed.ca/" target="_blank">Indeed</a></h5>
+                                            <p>加拿大最大的求職網站之一，提供多樣化的工作機會。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.jobbank.gc.ca/home" target="_blank">Job Bank</a>
+                                            </h5>
+                                            <p>加拿大政府官方求職網站，提供全國就業信息。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.glassdoor.ca/index.htm"
+                                                    target="_blank">Glassdoor</a></h5>
+                                            <p>提供工作機會、公司評論和薪資信息的綜合平台。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.monster.ca/" target="_blank">Monster</a></h5>
+                                            <p>全球知名求職網站，提供多樣化的工作機會。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.dice.com/" target="_blank">Dice</a></h5>
+                                            <p>專注於科技行業的求職網站。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.careerbuilder.ca/"
+                                                    target="_blank">CareerBuilder</a></h5>
+                                            <p>提供廣泛的職業機會和職業建議。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.simplyhired.com/" target="_blank">Simply Hired</a>
+                                            </h5>
+                                            <p>整合多個求職網站的工作機會。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.jobboom.com/en" target="_blank">Jobboom</a></h5>
+                                            <p>主要服務魁北克地區的求職網站。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.ziprecruiter.com/" target="_blank">ZipRecruiter</a>
+                                            </h5>
+                                            <p>利用AI技術匹配求職者和雇主的平台。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://neuvoo.ca/" target="_blank">Neuvoo</a></h5>
+                                            <p>提供全面的工作搜索和職業信息。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.jobillico.com/" target="_blank">Jobillico</a></h5>
+                                            <p>加拿大本土的就業平台，提供多樣化的工作機會。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://ca.talent.com/" target="_blank">Talent.com</a></h5>
+                                            <p>全球性的求職網站，提供多語言支持。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.jobs.ca/" target="_blank">Jobs.ca</a></h5>
+                                            <p>專注於加拿大市場的求職網站。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.eluta.ca/" target="_blank">Eluta</a></h5>
+                                            <p>加拿大領先的工作搜索引擎。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.workopolis.com/" target="_blank">Workopolis</a>
+                                            </h5>
+                                            <p>提供全面的求職和招聘服務。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.workintech.ca/" target="_blank">Work in Tech</a>
+                                            </h5>
+                                            <p>專注於科技行業工作機會的平台。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.joblist.com/" target="_blank">JobList</a></h5>
+                                            <p>整合多個來源的工作機會。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.wowjobs.ca/" target="_blank">Wow Jobs</a></h5>
+                                            <p>提供加拿大各地的工作機會。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.careerjet.ca" target="_blank">CareerJet</a></h5>
+                                            <p>全球性的工作搜索引擎，包括加拿大職位。</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>人力資源公司</h4>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.randstad.ca" target="_blank">Randstad</a></h5>
+                                            <p>全球領先的人力資源服務提供商。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.roberthalf.ca/en/on-toronto" target="_blank">Robert
+                                                    Half</a></h5>
+                                            <p>專注於財務、會計、技術和行政領域的招聘。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.adecco.ca" target="_blank">Adecco</a></h5>
+                                            <p>提供廣泛的就業和人才管理服務。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.teksystems.com/en-ca"
+                                                    target="_blank">TEKsystems</a></h5>
+                                            <p>專門提供IT人才招聘和技術服務解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.experisjobs.ca/ej-ca-en/index.htm"
+                                                    target="_blank">Experis</a></h5>
+                                            <p>專注於IT、工程和金融領域的人才解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="http://www.ctcinc.ca/" target="_blank">CTC</a></h5>
+                                            <p>提供各種人力資源和招聘服務。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://proviso.ca/" target="_blank">Proviso</a></h5>
+                                            <p>提供定制化的招聘解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="http://www.deangroup.ca" target="_blank">Dean Group</a></h5>
+                                            <p>專注於行政、財務和技術領域的招聘。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="http://www.bagg.com" target="_blank">BAGG Group</a></h5>
+                                            <p>提供全面的人力資源和招聘服務。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.axelon.com/careers/" target="_blank">Axelon</a>
+                                            </h5>
+                                            <p>專注於IT和工程領域的招聘。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="http://isgsearch.ca/search-jobs/" target="_blank">ISG
+                                                    Search</a></h5>
+                                            <p>提供專業的招聘和人才搜索服務。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.insightglobal.net/" target="_blank">Insight
+                                                    Global</a></h5>
+                                            <p>提供多元化的人才解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.apexsystems.com/" target="_blank">Apex Systems</a>
+                                            </h5>
+                                            <p>專注於IT和工程領域的人才解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.judge.com/" target="_blank">The Judge Group</a>
+                                            </h5>
+                                            <p>提供全面的人才、技術和學習解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.sisystems.com/" target="_blank">SI Systems</a></h5>
+                                            <p>專注於IT和工程領域的招聘服務。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://ca.drakeintl.com/" target="_blank">Drake
+                                                    International</a></h5>
+                                            <p>提供全面的人力資源解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.eagleonline.com/" target="_blank">Eagle</a></h5>
+                                            <p>專注於IT、財務和專業服務領域的招聘。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="http://provisionstaffing.com/" target="_blank">Provision</a>
+                                            </h5>
+                                            <p>提供定制化的人才解決方案。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://fuzehr.com/" target="_blank">Fuze HR</a></h5>
+                                            <p>提供創新的人力資源和招聘服務。</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="http://www.kovasys.com/" target="_blank">Kovasys</a></h5>
+                                            <p>專注於IT和工程領域的招聘服務。</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade show" id="shopping">
+                            <div class="row content-grid">
+                                <h4>外送服務</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.ubereats.com" target="_blank">Uber Eats</a></h5>
+                                            <p>食物外送服務</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.doordash.com" target="_blank">DoorDash</a></h5>
+                                            <p>食物外送服務</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.fantuan.ca" target="_blank">飯團外賣</a></h5>
+                                            <p>亞洲食物外送服務</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.instacart.ca" target="_blank">Instacart</a></h5>
+                                            <p>雜貨和日用品外送服務</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4>工具網站</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.instacart.ca" target="_blank">Flipp - Flyer APP</a>
+                                            </h5>
+                                            <p>查詢每週超市特價</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.redflagdeals.com" target="_blank">RedFlagDeals</a>
+                                            </h5>
+                                            <p>加拿大的交易和折扣資訊網站</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.shopbot.ca" target="_blank">Shopbot</a></h5>
+                                            <p>比較各種產品價格的網站</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>超市</h4>
+                                <p>購物省錢小技巧(請依各店訊息為主)：Price Matching、Rain Check</p>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.costco.ca" target="_blank">Costco 好市多</a></h5>
+                                            <p>大型會員制倉儲式超市</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.walmart.ca" target="_blank">Walmart 沃爾瑪</a></h5>
+                                            <p>大型綜合超市</p>
+                                        </li>
+                                        <li>
+                                            <h5>Metro 集團</h5>
+                                            <p><a href="https://www.metro.ca" target="_blank">Metro</a></p>
+                                            <p><a href="https://www.foodbasics.ca" target="_blank">Food Basics</a></p>
+                                            <p><a href="https://www.ap.ca" target="_blank">A&P</a></p>
+                                            <p><a href="https://www.loeb.ca" target="_blank">Loeb</a></p>
+                                        </li>
+                                        <li>
+                                            <h5>Sobeys 集團</h5>
+                                            <p><a href="https://www.sobeys.com" target="_blank">Sobeys</a></p>
+                                            <p><a href="https://www.freshco.com" target="_blank">FreshCo</a></p>
+                                            <p><a href="https://www.iga.net">IGA</a></p>
+                                            <p><a href="https://www.safeway.ca" target="_blank">Safeway</a></p>
+                                            <p><a href="https://www.thriftyfoods.com" target="_blank">Thrifty Foods</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5>Loblaws 集團</h5>
+                                            <p><a href="https://www.loblaws.ca" target="_blank">Loblaws</a></p>
+                                            <p><a href="https://www.nofrills.ca" target="_blank">No Frills</a></p>
+                                            <p><a href="https://www.tnt-supermarket.com" target="_blank">T&T 大統華超市</a>
+                                            </p>
+                                            <p><a href="https://www.realcanadiansuperstore.ca" target="_blank">Real
+                                                    Canadian Superstore</a></p>
+                                            <p><a href="https://www.atlanticsuperstore.ca" target="_blank">Atlantic
+                                                    Superstore</a></p>
+                                            <p><a href="https://www.dominion.ca" target="_blank">Dominion</a></p>
+                                            <p><a href="https://www.extrafoods.ca" target="_blank">Extra Foods</a></p>
+                                            <p><a href="https://www.fortinos.ca" target="_blank">Fortinos</a></p>
+                                            <p><a href="https://www.maxi.ca" target="_blank">Maxi</a></p>
+                                            <p><a href="https://www.provigo.ca" target="_blank">Provigo</a></p>
+                                            <p><a href="https://www.saveeasy.ca" target="_blank">SaveEasy</a></p>
+                                            <p><a href="https://www.valu-mart.ca" target="_blank">Valu-mart</a></p>
+                                            <p><a href="https://www.yourindependentgrocer.ca" target="_blank">Your
+                                                    Independent Grocer</a></p>
+                                            <p><a href="https://www.zehrs.ca" target="_blank">Zehrs Markets</a></p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>購物網站</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.shoppersdrugmart.ca" target="_blank">Shoppers Drug
+                                                    Mart</a></h5>
+                                            <p>加拿大最大的藥房連鎖店之一</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.homedepot.ca" target="_blank">Home Depot</a></h5>
+                                            <p>提供家居建材和裝修用品的連鎖店</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.bestbuy.ca" target="_blank">Best Buy</a></h5>
+                                            <p>提供電子產品和家電的連鎖店</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.canadiantire.ca" target="_blank">Canadian Tire</a>
+                                            </h5>
+                                            <p>提供家居、汽車、運動用品等的連鎖店</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.amazon.ca" target="_blank">Amazon Canada</a></h5>
+                                            <p>亞馬遜購物平台</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.ebay.ca" target="_blank">eBay Canada</a></h5>
+                                            <p>Ebay 拍賣和購物網站</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.kijiji.ca" target="_blank">Kijiji</a></h5>
+                                            <p>加拿大本地的分類廣告和購物網站</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>百貨公司</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.thebay.com/" target="_blank">Hudson's Bay</a></h5>
+                                            <p>加拿大歷史最悠久的百貨公司之一</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>加拿大品牌</h4>
+                                <div class="col-md-6">
+                                    <h5>美妝用品</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.sephora.ca" target="_blank">Sephora Canada</a></h5>
+                                            <p>全球知名的化妝品和美容產品零售商</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.maccosmetics.ca" target="_blank">MAC Cosmetics</a>
+                                            </h5>
+                                            <p>知名化妝品品牌</p>
+                                        </li>
+                                    </ul>
+                                    <h5>保健食品</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.webbernaturals.com/ca/en" target="_blank">Webber
+                                                    Naturals</a></h5>
+                                            <p>加拿大本地的維生素和營養補充品品牌</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.jamiesonvitamins.com" target="_blank">Jamieson</a>
+                                            </h5>
+                                            <p>知名的加拿大本地維生素和營養補充品品牌</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.naturalfactors.com" target="_blank">Natural
+                                                    Factors</a></h5>
+                                            <p>加拿大本地的保健食品品牌</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>服飾類</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.roots.com" target="_blank">Roots</a></h5>
+                                            <p>知名的加拿大服裝品牌</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.canadagoose.com" target="_blank">Canada Goose</a>
+                                            </h5>
+                                            <p>知名的加拿大戶外服裝品牌</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.lululemon.com" target="_blank">Lululemon</a></h5>
+                                            <p>知名的加拿大運動服裝品牌</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.mec.ca" target="_blank">MEC</a></h5>
+                                            <p>Mountain Equipment Co-op，加拿大知名戶外用品品牌</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>各省的酒類商店</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h6><a href="https://www.bcliquorstores.com" target="_blank">不列顛哥倫比亞省 BC
+                                                    Liquor Stores</a></h6>
+                                        </li>
+                                        <li>
+                                            <h6><a href="https://www.liquorconnect.com" target="_blank">亞伯達省 Liquor
+                                                    Connect</a></h6>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h6><a href="https://www.saq.com" target="_blank">魁北克省 SAQ (Société des
+                                                    alcools du Québec)</a></h6>
+                                        </li>
+                                        <li>
+                                            <h6><a href="https://www.mynslc.com" target="_blank">新斯科細亞省 NSLC (Nova
+                                                    Scotia Liquor Corporation)</a></h6>
+                                        </li>
+                                        <li>
+                                            <h6><a href="https://www.anbl.com" target="_blank">新不倫瑞克省 ANBL (Alcool NB
+                                                    Liquor)</a></h6>
+                                        </li>
+                                        <li>
+                                            <h6><a href="https://www.nlliquor.com" target="_blank">紐芬蘭和拉布拉多省 LC
+                                                    (Newfoundland and Labrador Liquor Corporation)</a></hh65>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade show" id="government">
+                            <div class="row content-grid">
+                                <h4>聯邦政府</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.canada.ca/en.html" target="_blank">Government of
+                                                    Canada</a></h5>
+                                            <p>加拿大政府官方網站</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.canada.ca/en/revenue-agency.html"
+                                                    target="_blank">Canada Revenue Agency</a></h5>
+                                            <p>加拿大稅務局，負責稅務和福利</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.canada.ca/en/employment-social-development.html"
+                                                    target="_blank">Employment and Social Development Canada</a></h5>
+                                            <p>加拿大就業和社會發展部，提供就業和社會服務資訊</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.canada.ca/en/public-health.html"
+                                                    target="_blank">Public Health Agency of Canada</a></h5>
+                                            <p>加拿大公共衛生局，提供公共衛生和健康資訊</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4>簽證、移民</h4>
+                                <div class="col-md-6">
+                                    <h5>Immigration, Refugees and Citizenship Canada, IRCC</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <a href="https://www.canada.ca/en/immigration-refugees-citizenship.html"
+                                                target="_blank">移民局官方網站</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news.html"
+                                                target="_blank">新聞中心</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>非官方移民新聞和消息</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <a href="https://immigrationnewscanada.ca/" target="_blank">Immigration
+                                                News Canada</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.cicnews.com" target="_blank">CIC News</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.immigration.ca" target="_blank">Immigration.ca</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.canadavisa.com/news.html" target="_blank">CanadaVisa
+                                                News</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>駐加拿大大使館及轄區</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <h5><a>台灣（中華民國）</a></h5>
+                                        <li>
+                                            <a href="https://www.taiwanembassy.org/ca/index.html"
+                                                target="_blank">駐加拿大台北經濟文化代表處</a>
+                                            <p>領務轄區：大渥太華地區</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.roc-taiwan.org/cayyz/" target="_blank">多倫多代表處</a>
+                                            <p>領務轄區：緬尼托巴省、安大略省、愛德華王子島省及諾瓦斯科西亞省</p>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.roc-taiwan.org/cayvr/" target="_blank">溫哥華代表處</a>
+                                            <p>領務轄區：卑詩省、亞伯達省、沙士卡其灣省、西北特區及育空特區</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.roc-taiwan.org/cayul/" target="_blank">蒙特婁代表處</a>
+                                            <p>領務轄區：魁北克省、紐布朗斯維克省、紐芬蘭暨拉布拉多省、努納福特區</p>
+                                        </li>
+                                    </ul>
+                                </div>                             
+
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <h5><a>中华人民共和国</a></h5>
+                                        <li>
+                                            <a href="https://ca.china-embassy.gov.cn/chn/" target="_blank">中国驻加拿大大使馆</a>
+                                            <p>领事服务区域：渥太华地区、纽芬兰和拉布拉多省、新斯科舍省、爱德华王子岛省和努纳武特</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://toronto.china-consulate.gov.cn" target="_blank">多伦多总领事馆</a>
+                                            <p>领事服务区域：安大略省、曼尼托巴省</p>
+                                        </li>
+
+                                        <li>
+                                            <a href="http://vancouver.china-consulate.gov.cn"
+                                                target="_blank">温哥华总领事馆</a>
+                                            <p>领事服务区域：不列颠哥伦比亚省和育空地区</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://calgary.china-consulate.gov.cn" target="_blank">卡尔加里总领事馆</a>
+                                            <p>领事服务区域：阿尔伯塔省、萨斯喀切温省、西北地区</p>
+                                        </li>
+                                        <li>
+                                            <a href="http://montreal.china-consulate.gov.cn/"
+                                                target="_blank">蒙特利尔总领事馆</a>
+                                            <p>领事服务区域：魁北克省、新不伦瑞克省</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <h5>马来西亚</h5>
+                                        <li>
+                                            <a href="https://www.kln.gov.my/web/can_ottawa/home"
+                                                target="_blank">马来西亚驻加拿大高级专员公署(渥太华)</a>
+                                        </li>
+                                        <li><a href="https://www.kln.gov.my/web/can_vancouver/home"
+                                                target="_blank">温哥华总领事馆</a></li>
+
+                                        <h5>新加坡共和国</h5>
+                                        <li>
+                                            <a href="https://www.mfa.gov.sg/Toronto" target="_blank">驻多伦多名誉总领事馆</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.mfa.gov.sg/Vancouver" target="_blank">驻温哥华名誉总领事馆</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade show" id="transportation">
+                            <div class="row content-grid">
+                                <h4>好用工具</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <a href="https://www.uber.com" target="_blank">Uber</a>
+                                            <p>計程車ＡＰＰ</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.lyft.com" target="_blank">Lyft</a>
+                                            <p>計程車ＡＰＰ</p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.transitapp.com" target="_blank">Transit App</a>
+                                            </h5>
+                                            <p>大眾運輸導航和時刻表ＡＰＰ</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.waze.com" target="_blank">Waze</a></h5>
+                                            <p>社群驅動的開車導航ＡＰＰ</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4>全國性網站</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.uhaul.com" target="_blank">U-Haul</a></h5>
+                                            <p>提供搬家和卡車租賃服務</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.enterprise.ca" target="_blank">Enterprise</a></h5>
+                                            <p>提供租車服務的全國性公司</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.viarail.ca" target="_blank">VIA Rail</a></h5>
+                                            <p>加拿大的客運鐵路服務</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.aircanada.com" target="_blank">Air Canada</a></h5>
+                                            <p>加拿大航空</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.westjet.com" target="_blank">WestJet</a></h5>
+                                            <p>西捷航空</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>電信商</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <h5><a>The Big Three (National providers)</a></h5>
+                                        <li>
+                                            <a href="https://www.rogers.com" target="_blank">Rogers</a>
+                                            <p>Rogers 電信</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.telus.com" target="_blank">Telus</a>
+                                            <p>Telus 電信</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.bell.ca" target="_blank">Bell</a>
+                                            <p>Bell 電信</p>
+                                        </li>
+
+                                        <h5><a>Flanker brands (1st Level Flankers)</a></h5>
+                                        <li>
+                                            <a href="https://www.fido.ca" target="_blank">Fido</a>
+                                            <p>Rogers 旗下品牌</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.koodomobile.com" target="_blank">Koodo</a>
+                                            <p>Telus 旗下品牌</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.virginmobile.ca" target="_blank">Virgin Mobile</a>
+                                            <p>Bell 旗下品牌</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.freedommobile.ca" target="_blank">Freedom Mobile</a>
+                                            <p>Québecor 旗下品牌</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://fizz.ca/en" target="_blank">Fizz</a>
+                                            <p>Québecor 旗下品牌</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <h5><a>Budget brands (2nd Level Flankers)</a></h5>
+                                        <li>
+                                            <a href="https://www.chatrmobile.com" target="_blank">Chatr</a>
+                                            <p>Rogers 旗下品牌</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.publicmobile.ca" target="_blank">Public Mobile</a>
+                                            <p>Telus 旗下品牌</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.luckymobile.ca" target="_blank">Lucky Mobile</a>
+                                            <p>Bell 旗下品牌</p>
+                                        </li>
+
+                                        <h5><a>區域性電信公司</a></h5>
+                                        <li>
+                                            <a href="https://videotron.com" target="_blank">Vidéotron</a>
+                                            <p>Québecor 旗下品牌，提供魁北克、渥太華及安大略省東部的部分地區服務</p>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.sasktel.com" target="_blank">SaskTel</a>
+                                            <p>省營公司，提供薩斯喀徹溫省服務</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade show" id="finance">
+                            <div class="row content-grid">
+                                <h4>政府機關</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.canada.ca/en/revenue-agency.html"
+                                                    target="_blank">Canada Revenue Agency (CRA)</a></h5>
+                                            <p>加拿大稅務局，負責稅務和福利</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4>銀行</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.td.com" target="_blank">Toronto-Dominion Bank</a>
+                                            </h5>
+                                            <p>TD 多倫多道明銀行</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.rbc.com" target="_blank">Royal Bank of Canada</a>
+                                            </h5>
+                                            <p>RBC 加拿大皇家銀行</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.scotiabank.com" target="_blank">Bank of Nova
+                                                    Scotia</a></h5>
+                                            <p>Scotiabank 加拿大豐業銀行</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.bmo.com" target="_blank">Bank of Montreal</a></h5>
+                                            <p>BMO 蒙特婁銀行</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.cibc.com" target="_blank">Canadian Imperial Bank of
+                                                    Commerce</a></h5>
+                                            <p>CIBC 加拿大帝國商業銀行</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="http://www.tctcu.com/" target="_blank">Toronto Taiwan Credit
+                                                    Union</a></h5>
+                                            <p>多倫多台灣信用合作社</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>保險公司</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.manulife.ca" target="_blank">Manulife</a></h5>
+                                            <p>宏利金融，提供人壽保險、投資和財務規劃服務</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.sunlife.ca" target="_blank">Sun Life Financial</a>
+                                            </h5>
+                                            <p>永明金融，提供保險和財務服務</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.tdinsurance.com/" target="_blank">TD Insurance</a>
+                                            </h5>
+                                            <p>道明保險，提供多種保險產品和服務</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade show" id="community">
+                            <div class="row content-grid">
+                                <h4>英文社群論壇</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.reddit.com/r/canada" target="_blank">Reddit
+                                                    Canada</a></h5>
+                                            <p>涵蓋各種加拿大話題的在線論壇和社群</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://forums.redflagdeals.com" target="_blank">RedFlagDeals
+                                                    Forums</a></h5>
+                                            <p>加拿大的交易和折扣資訊論壇</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4>Facebook 群組</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.facebook.com/groups/135836589766127/"
+                                                    target="_blank">加拿大打工度假資訊</a></h5>
+                                            <p>提供加拿大打工度假相關資訊的群組</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.facebook.com/groups/140360422735205/"
+                                                    target="_blank">加拿大打工度假資訊-租屋版</a></h5>
+                                            <p>專門提供加拿大打工度假者租屋資訊的群組</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.facebook.com/groups/canada.tw/"
+                                                    target="_blank">我是台灣人, 我住加拿大</a></h5>
+                                            <p>台灣人在加拿大的交流群組</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.facebook.com/groups/CanadaHongKonger/"
+                                                    target="_blank">加拿大香港人Canada HongKonger Group</a></h5>
+                                            <p>香港人在加拿大的交流群組</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade show" id="hobbby"></div>
+
+                        <div class="tab-pane fade show  active" id="toronto">
+                            <div class="row content-grid">
+                                <h4>政府網站</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.toronto.ca" target="_blank">多倫多市政府</a></h5>
+                                            <p>多倫多市的官方網站，提供城市服務和資訊</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.york.ca" target="_blank">約克區域政府</a></h5>
+                                            <p>約克區域的官方網站，提供當地政府服務和資訊</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.torontopubliclibrary.ca"
+                                                    target="_blank">多倫多公共圖書館</a></h5>
+                                            <p>提供豐富的圖書和資源的公共圖書館系統</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.ontario.ca/page/serviceontario/"
+                                                    target="_blank">Service Ontario</a></h5>
+                                            <p>提供各種省級政府服務的網站</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4>城市新聞</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.thestar.com" target="_blank">多倫多星報</a></h5>
+                                            <p>多倫多的主要新聞來源，涵蓋當地和國際新聞</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.cp24.com" target="_blank">CP24</a></h5>
+                                            <p>24小時新聞頻道，提供即時新聞和資訊</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.blogto.com" target="_blank">BlogTO</a></h5>
+                                            <p>多倫多的新聞、事件和生活指南</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.torontolife.com" target="_blank">Toronto Life</a>
+                                            </h5>
+                                            <p>多倫多的生活方式和文化雜誌</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>交通</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.prestocard.ca" target="_blank">Presto卡</a></h5>
+                                            <p>多倫多及周邊地區的公共交通支付系統</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.gotransit.com" target="_blank">GO Transit</a></h5>
+                                            <p>大多倫多地區的通勤鐵路和巴士服務</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.torontopearson.com/" target="_blank">Toronto
+                                                    Pearson International Airport (YYZ)</a></h5>
+                                            <p>多倫多皮爾遜國際機場</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.flixbus.ca" target="_blank">FlixBus</a></h5>
+                                            <p>往返加拿大、美國城市的長途巴士</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>大多倫多各地交通局</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.ttc.ca" target="_blank">多倫多 Toronto Transit
+                                                    Commission (TTC)</a></h5>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.yrt.ca/" target="_blank">約克地區 York
+                                                    Region Transit (YRT)</a></h5>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.brampton.ca/EN/residents/transit"
+                                                    target="_blank">布蘭普頓 Brampton
+                                                    Transit (BT)</a></h5>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.miway.ca/" target="_blank">密西沙加 MiWay</a></h5>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.durhamregiontransit.com/" target="_blank">達勒姆地區
+                                                    Durham
+                                                    Region Transit (DRT)</a></h5>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>博物館與景點</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.rom.on.ca" target="_blank">皇家安大略博物館 (ROM)</a></h5>
+                                            <p>加拿大最大的博物館之一，展示自然歷史和文化展覽</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.casaloma.ca" target="_blank">卡薩羅馬 (Casa Loma)</a>
+                                            </h5>
+                                            <p>多倫多的歷史地標，提供導覽和活動</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.ago.ca" target="_blank">安大略美術館 (AGO)</a></h5>
+                                            <p>展示各類藝術展覽的主要美術館</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.cntower.ca" target="_blank">加拿大國家電視塔 (CN Tower)</a>
+                                            </h5>
+                                            <p>多倫多的著名地標，提供觀景台和餐廳</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.canadaswonderland.com/" target="_blank">加拿大奇幻樂園
+                                                    (Canada's
+                                                    Wonderland)</a></h5>
+                                            <p>加拿大最大的主題樂園，提供各種遊樂設施和活動</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.torontoislands.com" target="_blank">多倫多群島</a></h5>
+                                            <p>提供戶外活動和美景的多倫多近郊景點</p>
+                                        </li>
+
+                                        <li>
+                                            <h5><a href="https://www.torontozoo.com" target="_blank">多倫多動物園</a></h5>
+                                            <p>加拿大最大的動物園，提供家庭友好的活動和教育項目</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.ripleys.com/attractions/ripleys-aquarium-of-canada"
+                                                    target="_blank">瑞普利水族館</a></h5>
+                                            <p>位於多倫多市中心的水族館，展示各種海洋生物</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>購物與服務</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://yorkdale.com/" target="_blank">Yorkdale 約克岱爾購物中心</a>
+                                            </h5>
+                                            <p>多倫多最大的購物中心之一，提供各類品牌和商店</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://shops.cadillacfairview.com/property/cf-toronto-eaton-centre"
+                                                    target="_blank">Eaton Centre 伊頓中心</a></h5>
+                                            <p>位於多倫多市中心的著名購物中心</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.scarboroughtowncentre.com"
+                                                    target="_blank">Scarborough Town Centre</a></h5>
+                                            <p>士嘉堡的主要購物中心之一，提供多樣化的購物選擇</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.vaughanmills.com" target="_blank">Vaughan Mills</a>
+                                            </h5>
+                                            <p>位於旺市的大型購物中心，提供折扣商品和品牌商店</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>酒類商店</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.lcbo.com/" target="_blank">LCBO (Liquor Control
+                                                    Board of Ontario)</a></h5>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.thebeerstore.ca/" target="_blank">The Beer
+                                                    Store</a>
+                                            </h5>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>論壇、討論區</h4>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.reddit.com/r/toronto" target="_blank">Reddit
+                                                    多倫多</a></h5>
+                                            <p>涵蓋各種多倫多話題的在線論壇和社群</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.yorkbbs.ca" target="_blank">約克論壇</a></h5>
+                                            <p>多倫多華人社區的在線論壇</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://info.51.ca/?wyacs=www-homepage"
+                                                    target="_blank">加國無憂</a></h5>
+                                            <p>多倫多華人的綜合信息網站</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <h4>社群團體</h4>
+                                <div class="col-md-6">
+                                    <h5>活躍中社群</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://torontotaikers.org/" target="_blank">多倫多台客幫 TORONTO
+                                                    TAIKERS</a></h5>
+                                            <p>舉辦各樣活動、認識新朋友的好地方</p>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.facebook.com/groups/466271188497869"
+                                                    target="_blank">加拿大台灣青年職涯發展協會 Canadian Taiwanese Career
+                                                    Association</a></h5>
+                                            <p><a href="https://www.youtube.com/@ctca1872/videos"
+                                                    target="_blank">Youtube</a>、<a href="https://ctca2022.blogspot.com/"
+                                                    target="_blank">Blog</a></p>
+                                            <p>協助台灣人規劃加拿大的職業生涯與尋找工作</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Facebook群組</h5>
+                                    <ul class="content-list">
+                                        <li>
+                                            <h5><a href="https://www.facebook.com/groups/twbbs.tccn/"
+                                                    target="_blank">多倫多台灣人論壇 TWBBS Taiwanese in Toronto Network</a></h5>
+                                        </li>
+                                        <li>
+                                            <h5><a href="https://www.facebook.com/groups/616789969465995/"
+                                                    target="_blank">多倫多 • 衣食住行 + 吃喝玩樂</a></h5>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <aside class="col-md-3 py-3">
+                    <div id="ad1" class="ad mb-3"></div>
+                    <div id="eventSection" class="mb-3">
+                        <h4 class="d-none d-md-block">Upcoming Events <small id="userTimezone"></small></h4>
+                        <div id="eventList"></div>
+                    </div>
+                    <div id="ad2" class="ad mb-3"></div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="ad3" class="ad"></div>
+                </div>
+                <div class="col-md-3">
+                    <div id="ad4" class="ad"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="action-buttons">
+                        <a href="https://forms.gle/Tj8deeX7ec4F57cT8" target="_blank" class="btn btn-primary">推薦新站</a>
+                        <a href="https://forms.gle/yfcX866Avj4CMm779" target="_blank" class="btn btn-primary">問題與建議</a>
+                        <a href="https://forms.gle/TSByEXgQE2wmehuW7" target="_blank" class="btn btn-primary">新增活動</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="d-md-none" aria-label="Back to top">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+    <script src="script.js"></script>
+    <script src="event.js"></script>
+    <script src="ad.js"></script>
+</body>
+
+</html>
