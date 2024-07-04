@@ -3,7 +3,7 @@ function loadEvents() {
     const { DateTime, Interval } = luxon;
     const eventList = document.getElementById('eventList');
     const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const now = DateTime.now().setZone(userTimezone);
+    const now = DateTime.now().setZone(userTimezone).startOf('day');
     const oneWeekLater = now.plus({ weeks: 1 });
     const groupedEvents = {};
 
@@ -23,13 +23,27 @@ function loadEvents() {
         };
     });
 
-    // Sort events by timestamp and filter for the next 7 days
-    const sortedEvents = processedEvents
-        .sort((a, b) => a.timestamp - b.timestamp)
-        .filter(event => Interval.fromDateTimes(now, oneWeekLater).contains(event.userDate));
+    // Filter out events before today and sort remaining events from nearest to furthest
+    const filteredAndSortedEvents = processedEvents
+        .filter(event => event.userDate >= now)
+        .sort((a, b) => a.timestamp - b.timestamp);
+
+    // Get events for the next 7 days
+    const nextSevenDaysEvents = filteredAndSortedEvents.filter(event => 
+        Interval.fromDateTimes(now, oneWeekLater).contains(event.userDate)
+    );
+
+    // If less than 5 events in the next 7 days, add more future events
+    let eventsToDisplay = nextSevenDaysEvents;
+    if (nextSevenDaysEvents.length < 5) {
+        const additionalEvents = filteredAndSortedEvents
+            .filter(event => !nextSevenDaysEvents.includes(event))
+            .slice(0, 5 - nextSevenDaysEvents.length);
+        eventsToDisplay = [...nextSevenDaysEvents, ...additionalEvents];
+    }
 
     // Group events by date
-    sortedEvents.forEach(event => {
+    eventsToDisplay.forEach(event => {
         const dateKey = event.userDate.toISODate();
         if (!groupedEvents[dateKey]) {
             groupedEvents[dateKey] = [];
@@ -48,7 +62,7 @@ function loadEvents() {
             html += `
                 <li>
                     <strong>${formattedTime}</strong>
-                    <a href="${event.url}" target="_blank">${event.name}</a>
+                    <a href="${event.url}" target="_blank">${event.name} (LINK)</a>
                     <small>${event.location}</small>
                 </li>
             `;
@@ -56,7 +70,7 @@ function loadEvents() {
         html += '</ul>';
     });
 
-    eventList.innerHTML = html || '<p class="text-muted">未來7天內沒有活動。</p>';
+    eventList.innerHTML = html || '<p class="text-muted">未來七天內沒有活動。</p>';
 }
 
 function getTimezoneOffset(timezone) {
