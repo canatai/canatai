@@ -23,7 +23,6 @@ Canatai is a web-based platform designed to simplify the process of finding esse
   - Hobbies (興趣愛好)
   - Toronto-specific Information
 - **Event Calendar**: Upcoming events relevant to the Canadian community.
-- **Responsive Design**: Optimized for various devices and screen sizes.
 - **Responsive Design**: Adapts to different screen sizes for optimal viewing on various devices.
 
 ## Technology Stack
