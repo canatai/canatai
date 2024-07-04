@@ -26,6 +26,13 @@ header h1 {
 
 header h1:hover {
     color: #004080;
+    color: inherit;
+    text-decoration: none;
+}
+
+header h1 a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .slogan {
