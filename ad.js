@@ -77,7 +77,7 @@ const adConfig = {
     ad4: {
         type: 'pure-text',
         content: 'Ad space available. Contact us for more information.',
-        display: true
+        display: false
     }
 };
 
