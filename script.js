@@ -62,7 +62,7 @@ function loadEvents() {
             html += `
                 <li>
                     <strong>${formattedTime}</strong>
-                    <a href="${event.url}" target="_blank">${event.name} (LINK)</a>
+                    <a href="${event.url}" title="${event.name}" target="_blank">${event.name} (LINK)</a>
                     <small>${event.location}</small>
                 </li>
             `;
